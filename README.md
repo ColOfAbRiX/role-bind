@@ -57,9 +57,11 @@ The role can be used with the default values but additional options can still be
 
 The default configuration mirrors the default `named.conf` values of the distribution where it is installed. Therefore it is not necessary to specify any additional values for the role to work.
 
-    - hosts: servers
-      roles:
-         - role: role-bind
+```Yaml
+- hosts: servers
+  roles:
+     - role: role-bind
+```
 
 ## BIND DSL
 
@@ -87,7 +89,7 @@ The  [default configuration](defaults/main.yml) file contains the default BIND c
 
 Ansible configuration:
 
-```
+```Yaml
 bind_options:
  - comment: "Runtime"
 ```
@@ -110,7 +112,7 @@ options {
 
 Ansible configuration:
 
-```
+```Yaml
 bind_options:
  - { name: pid-file, value: '"/var/named/named.pid"' }
 ```
@@ -133,7 +135,7 @@ options {
 
 Ansible configuration:
 
-```
+```Yaml
 bind_options:
  # Note the presence of double quotes in the "value" attribute
  - { name: pid-file, value: '"/var/named/named.pid"' }
@@ -157,7 +159,7 @@ options {
 
 Ansible configuration:
 
-```
+```Yaml
 bind_zones:
  - name: zone
    value: '"."'
@@ -186,7 +188,7 @@ zone "." IN {
 
 Ansible configuration:
 
-```
+```Yaml
 bind_acls:
  - name: acl
    value: '"default_networks"'
@@ -217,7 +219,7 @@ acl "default_networks" {
 
 Ansible configuration:
 
-```
+```Yaml
 bind_options:
  - name: listen-on
    inline:
@@ -246,7 +248,7 @@ options {
 
 Ansible configuration:
 
-```
+```Yaml
 bind_options:
  - name: listen-on
    inline:
